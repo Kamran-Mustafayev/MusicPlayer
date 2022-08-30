@@ -1,0 +1,223 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+font-family: the 'Times New Roman', Times, serif;
+display: flex;
+min-height: 100vh;
+align-items: center;
+justify-content: center;
+background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+background-size: 400% 400%;
+animation: gradient 15s ease infinite;
+height: 100vh;
+}
+
+.player{
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.art{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.circle{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #f1f1f1;
+    border-radius: 50%;
+    box-shadow: rgba(0,0,0,0.3) 0px 19px 38px, rgba(0,0,0,0.22) 0px 15px 12px;
+}
+.wrapper{
+    position: relative;
+    border: 1 solid transparent;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: rgba(0,0,0,0.3) 0px 19px 38px, rgba(0,0,0,0.22) 0px 15px 12px;
+    opacity: 0.9;
+    background: #0F2027;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.track-art{
+    margin: 25px;
+    height: 250px;
+    width: 250px;
+    border: 2px solid #fff;
+    background-size: cover;
+    background-position: cover;
+    border-radius: 50%;
+    background-position: center;
+    box-shadow: 0px 0px 5px 5px #ccc;
+    border-radius: 190px;
+background: #c31432;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #240b36, #c31432);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #240b36, #c31432); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.now-playing{
+    font-size: 2rem;
+}
+.track-name{
+    font-size: 1.5rem;
+}
+.track-artist{
+    margin-top: 5px;
+    font-size: 1rem;
+}
+
+.button{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 30px;
+}
+
+.slider-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.seek-slider, 
+.volume-slider{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 5px;
+    background: #ffdd59;
+}
+
+.seek-slider::-webkit-slider-thumb,
+.volume-slider::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    border:  3px solid #2ecc71;
+    cursor: pointer;
+    border-radius: 100%;
+}
+
+.seek-slider{
+    width: 60%;
+}
+
+.volume-slider{
+    width: 30%;
+}
+
+.current-times,.total-duration{
+    padding: 10px;
+}
+
+i.fa-volume-mute,i.fa-volume-down,i.fa-volume-up{
+    padding: 10px;
+}
+
+.fas{
+    cursor: pointer;
+}
+
+.loader{
+    position: absolute;
+    height: 600px;
+    display: flex;
+    align-items: center;
+}
+
+.loader .stroke{
+    display: none;
+    position: relative;
+    background: #f1f1f1;
+    height: 100%;
+    width: 60px;
+    border-radius: 60px;
+    margin: 0 30px;
+    /* animation: wave 0.5s linear infinite; */
+}
+
+@keyframes wave{
+   50%{
+    height: 25%;
+    opacity: 0.5;
+    background: #2193b0;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #6dd5ed, #2193b0);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+   }
+   100%{
+    height: 100%;
+    background: #833ab4;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    opacity: 0.5;
+   }
+}
+
+@keyframes plak{
+    from{
+transform: rotate(0deg);
+    }
+    to{
+transform: rotate(360deg);
+    }
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.stroke:nth-child(1){
+    animation-delay: 0.1s;
+}
+.stroke:nth-child(2){
+    animation-delay: 0.2s;
+}
+.stroke:nth-child(3){
+    animation-delay: 0.3s;
+}
+.stroke:nth-child(4){
+    animation-delay: 0.4s;
+}
+.stroke:nth-child(5){
+    animation-delay: 0.3s;
+}
+.stroke:nth-child(6){
+    animation-delay: 0.2s;
+}
+.stroke:nth-child(7){
+    animation-delay: 0.1s;
+}
+
+
